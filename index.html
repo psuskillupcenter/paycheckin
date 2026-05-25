@@ -535,7 +535,7 @@ function renderInsights(s) {
     {icon:'2', color: COLORS.blue, title:`กลุ่มมีโอกาสมาเรียนสูงแต่ยังไม่รายงานตัว: ${fmtNum(followPaid)} คน`, text:`ชำระครบแล้วแต่ยังไม่รายงานตัว ควรเร่งสื่อสารขั้นตอนรายงานตัวและตรวจสอบอุปสรรค`},
     {icon:'3', color: COLORS.amber, title:`กลุ่มต้องติดตามทั้งเงินและรายงานตัว: ${fmtNum(followPartial)} คน`, text:`ชำระบางส่วนแต่ยังไม่รายงานตัว เป็นกลุ่มหลักที่มีผลต่อการคาดการณ์จำนวนนักศึกษาเข้าพื้นที่จริง`},
     {icon:'4', color: COLORS.red, title:`กลุ่มเสี่ยงสูง: ${fmtNum(highRisk)} คน`, text:`ยังไม่ชำระและยังไม่รายงานตัว ควรติดตามแยกตามคณะ/หลักสูตร เพื่อประเมินจำนวนที่อาจไม่มาเรียน`},
-    {icon:'!', color: COLORS.purple, title:`รายการที่ควรตรวจสอบข้อมูล: ${fmtNum(dataCheck)} คน`, text:`รายงานตัวแล้วแต่ยังไม่ชำระ อาจเป็นกรณีทุน เงื่อนไขพิเศษ หรือข้อมูลการชำระเงินยังไม่อัปเดต`}
+    {icon:'!', color: COLORS.purple, title:`รายการที่ควรตรวจสอบข้อมูล: ${fmtNum(dataCheck)} คน`, text:`.`}
   ];
   $('insights').innerHTML = items.map(i => `
     <div class="insight">
