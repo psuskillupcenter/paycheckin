@@ -322,7 +322,7 @@
       </div>
       <div class="card">
         <h3>สถานะชำระเงินตามคณะ/วิทยาลัย</h3>
-        <div class="hint">เห็นกลุ่มชำระครบ บางส่วน และยังไม่ชำระ</div>
+
         <div class="chart-wrap"><canvas id="facultyPaymentChart"></canvas></div>
       </div>
     </section>
@@ -530,10 +530,10 @@ function renderInsights(s) {
   const highRisk = s.uWait;
   const dataCheck = s.uReg;
   const items = [
-    {icon:'1', color: COLORS.green, title:`กลุ่มพร้อมต้อนรับทันที: ${fmtNum(confirmed)} คน`, text:`เป็นกลุ่มที่รายงานตัวแล้ว ควรใช้เป็นฐานขั้นต่ำในการเตรียมพื้นที่ จุดลงทะเบียน และกิจกรรมรับนักศึกษาใหม่`},
-    {icon:'2', color: COLORS.blue, title:`กลุ่มมีโอกาสมาเรียนสูงแต่ยังไม่รายงานตัว: ${fmtNum(followPaid)} คน`, text:`ชำระครบแล้วแต่ยังไม่รายงานตัว ควรเร่งสื่อสารขั้นตอนรายงานตัวและตรวจสอบอุปสรรค`},
-    {icon:'3', color: COLORS.amber, title:`กลุ่มต้องติดตามทั้งเงินและรายงานตัว: ${fmtNum(followPartial)} คน`, text:`ชำระบางส่วนแต่ยังไม่รายงานตัว เป็นกลุ่มหลักที่มีผลต่อการคาดการณ์จำนวนนักศึกษาเข้าพื้นที่จริง`},
-    {icon:'4', color: COLORS.red, title:`กลุ่มเสี่ยงสูง: ${fmtNum(highRisk)} คน`, text:`ยังไม่ชำระและยังไม่รายงานตัว ควรติดตามแยกตามคณะ/หลักสูตร เพื่อประเมินจำนวนที่อาจไม่มาเรียน`},
+    {icon:'1', color: COLORS.green, title:`กลุ่มพร้อมต้อนรับทันที: ${fmtNum(confirmed)} คน`, text:`รายงานตัว และชำระเงินแล้ว`},
+    {icon:'2', color: COLORS.blue, title:`กลุ่มมีโอกาสมาเรียนสูงแต่ยังไม่รายงานตัว: ${fmtNum(followPaid)} คน`, text:`ชำระครบแล้วแต่ยังไม่รายงานตัว`},
+    {icon:'3', color: COLORS.amber, title:`กลุ่มต้องติดตามทั้งเงินและรายงานตัว: ${fmtNum(followPartial)} คน`, text:`ชำระบางส่วนแต่ยังไม่รายงานตัว`},
+    {icon:'4', color: COLORS.red, title:`กลุ่มเสี่ยงสูง: ${fmtNum(highRisk)} คน`, text:`ยังไม่ชำระและยังไม่รายงานตัว`},
 
   ];
   $('insights').innerHTML = items.map(i => `
