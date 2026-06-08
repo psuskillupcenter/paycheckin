@@ -136,11 +136,12 @@
         <div>
           <span class="eyebrow">Dashboard URL: student-ready • ปีการศึกษา 2569</span>
           <h1>Student Ready Dashboard</h1>
-          <p class="subtitle">สรุปสถานะการชำระเงินและการรายงานตัวของนักศึกษาใหม่ เพื่อสนับสนุนการเตรียม Facility ร้านอาหาร จุดบริการ และพื้นที่ต้อนรับในวิทยาเขตภูเก็ต</p>
+          <p class="subtitle">สรุปสถานะการชำระค่าธรรมเนียมการศึกษาและการรายงานตัวของนักศึกษาใหม่ เพื่อสนับสนุนการเตรียม Facility ร้านอาหาร จุดบริการ และพื้นที่ต้อนรับในวิทยาเขตภูเก็ต</p>
+          <p class="subtitle">ข้อมูล ณ วันที่ 8 มิถุนายน 2569</p>
         </div>
         <div class="hero-stat">
           <div class="num" id="heroTotal">0</div>
-          <div class="label">นักศึกษาใหม่ในชุดข้อมูลล่าสุด</div>
+          <div class="label">จำนวนนักศึกษาใหม่</div>
         </div>
       </div>
     </section>
@@ -304,10 +305,10 @@ function updateInsights(sum) {
   const unpaidNotReported = sum.matrix['ยังไม่ชำระเลย']['ยังไม่รายงานตัว'];
   const paidAndReported = sum.matrix['ชำระครบแล้ว']['รายงานตัวแล้ว'];
   const html = [
-    ['blue', 'จำนวนที่ควรเตรียมรองรับทันที', `มีนักศึกษาที่รายงานตัวแล้ว <b>${NUM.format(sum.reported)} คน</b> ควรเตรียมพื้นที่ต้อนรับ จุดพักคอย อาหารและเครื่องดื่มให้พร้อม`],
-    ['green', 'กลุ่มมีโอกาสเข้าพื้นที่เร็ว', `ชำระครบ/ชำระบางส่วนแต่ยังไม่รายงานตัว <b>${NUM.format(readySoon)} คน</b> ควรเร่งสื่อสารกำหนดการและข้อมูล Facility`],
-    ['amber', 'กลุ่มต้องติดตามก่อนประเมินจำนวนจริง', `ยังไม่ชำระและยังไม่รายงานตัว <b>${NUM.format(unpaidNotReported)} คน</b> อาจทำให้การคาดการณ์จำนวนผู้มาเรียนคลาดเคลื่อน`],
-    ['red', 'ประเด็นการเงินที่ควรประสานต่อ', `รายงานตัวแล้วแต่ยังชำระไม่ครบหรือยังไม่ชำระ <b>${NUM.format(financeFollow)} คน</b> ควรแยกติดตามร่วมกับหน่วยงานการเงิน`]
+    ['blue', 'จำนวนที่ควรเตรียมรองรับทันที', `มีนักศึกษาที่รายงานตัวแล้ว <b>${NUM.format(sum.reported)} คน</b>`],
+    ['green', 'กลุ่มมีโอกาสเข้าพื้นที่เร็ว', `ชำระครบ/ชำระบางส่วนแต่ยังไม่รายงานตัว <b>${NUM.format(readySoon)} คน</b> `],
+    ['amber', 'กลุ่มต้องติดตามก่อนประเมินจำนวนจริง', `ยังไม่ชำระและยังไม่รายงานตัว <b>${NUM.format(unpaidNotReported)} คน</b> `],
+    ['red', 'ประเด็นการเงินที่ควรประสานต่อ', `รายงานตัวแล้วแต่ยังชำระไม่ครบหรือยังไม่ชำระ <b>${NUM.format(financeFollow)} คน</b> `]
   ].map(([color, title, desc]) => `<div class="insight"><span class="dot ${color}"></span><div><b>${title}</b><span class="muted">${desc}</span></div></div>`).join('');
   document.getElementById('insights').innerHTML = html;
 }
