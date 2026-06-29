@@ -1,242 +1,60 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Executive Summary Dashboard - New Student Readiness 2569</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    :root{
-      --primary:#0d6efd;
-      --cyan:#12b6d9;
-      --purple:#7a5af8;
-      --navy:#14315a;
-      --text:#334155;
-      --bg:#f5f8fc;
-      --success:#1fa971;
-      --warning:#f59e0b;
-      --danger:#e24b4b;
-      --soft:#eef4fb;
-    }
-    body{font-family: "Segoe UI", Tahoma, sans-serif; background:linear-gradient(180deg,#f7fbff 0%, #eef4fb 100%); color:var(--text);}    
-    .container-page{max-width:1440px; margin:auto; padding:28px 20px 48px;}
-    .hero{
-      background:#fff; border-radius:28px; padding:30px 34px; box-shadow:0 16px 40px rgba(26,61,111,.08); position:relative; overflow:hidden;
-    }
-    .hero:before{content:""; position:absolute; right:-40px; top:-40px; width:240px; height:240px; background:radial-gradient(circle at center, rgba(18,182,217,.18), rgba(122,90,248,.03) 70%, transparent 72%); border-radius:50%;}
-    .hero h1{font-weight:800; color:var(--navy); margin:0; font-size:clamp(1.9rem,2.8vw,3rem);}
-    .hero .sub{font-size:1.05rem; color:#4c6a92; margin-top:8px;}
-    .badge-soft{background:#edf4ff; color:#2457b3; font-weight:600; border-radius:999px; padding:.55rem .9rem;}
-    .section-title{font-weight:800; color:var(--navy); font-size:1.15rem; margin:24px 0 14px;}
-    .card-soft, .mini-card, .status-card{background:#fff; border:none; border-radius:22px; box-shadow:0 12px 32px rgba(26,61,111,.08);}
-    .kpi{height:100%; padding:22px 22px 18px; position:relative; overflow:hidden;}
-    .kpi .label{font-size:.95rem; color:#5e7698; font-weight:600; margin-bottom:6px;}
-    .kpi .value{font-size:2.3rem; font-weight:800; line-height:1; color:var(--navy);}    
-    .kpi .unit{font-size:1rem; font-weight:700; color:#607696;}
-    .kpi .note{font-size:.9rem; color:#62748b; margin-top:10px;}
-    .accent-primary{border-top:6px solid var(--primary);}    
-    .accent-cyan{border-top:6px solid var(--cyan);}    
-    .accent-purple{border-top:6px solid var(--purple);}    
-    .accent-green{border-top:6px solid var(--success);}    
-    .accent-amber{border-top:6px solid var(--warning);}    
-    .accent-red{border-top:6px solid var(--danger);}    
-    .big-plan{background:linear-gradient(135deg, #0d6efd 0%, #12b6d9 100%); color:#fff;}
-    .big-plan .label,.big-plan .note,.big-plan .unit{color:rgba(255,255,255,.92);}    
-    .big-plan .value{color:#fff; font-size:3.2rem;}
-    .big-plan .pill{display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:6px 12px; font-size:.9rem; font-weight:700; margin-top:10px;}
-    .summary-grid .mini-card{padding:18px 18px 14px; height:100%;}
-    .summary-grid h3{margin:0; font-size:1.9rem; font-weight:800; color:var(--navy);}    
-    .summary-grid .cap{font-size:.92rem; color:#607696; font-weight:700; margin-top:4px;}
-    .summary-grid .subline{font-size:.85rem; color:#7a8ca6; margin-top:8px;}
-    .status-card{padding:18px; height:100%;}
-    .status-title{font-size:1rem; font-weight:700; color:var(--navy); min-height:3rem;}
-    .status-num{font-size:2rem; font-weight:800; color:var(--navy);}
-    .status-pct{font-size:.95rem; color:#61748d; font-weight:700;}
-    .status-pill{display:inline-block; padding:4px 10px; border-radius:999px; font-size:.82rem; font-weight:700; background:#eff5ff; color:#295db4; margin-top:10px;}
-    .card-header-line{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:14px;}
-    .card-header-line h2{font-size:1.1rem; font-weight:800; color:var(--navy); margin:0;}
-    .card-header-line span{font-size:.85rem; color:#6780a3;}
-    .list-card{padding:20px 22px;}
-    .formal-list li{margin-bottom:12px; line-height:1.55;}
-    .formal-list strong{color:var(--navy);}    
-    .table-clean{width:100%;}
-    .table-clean td{padding:10px 0; border-bottom:1px dashed #dbe5f2; font-size:.97rem;}
-    .table-clean tr:last-child td{border-bottom:none;}
-    .table-clean td:last-child{text-align:right; font-weight:800; color:var(--navy);}    
-    .footer-note{font-size:.84rem; color:#7387a6; margin-top:16px;}
-    .chip{display:inline-block; padding:5px 10px; border-radius:999px; font-size:.82rem; font-weight:700; background:#edf6ff; color:#2761bb;}
-    .highlight-red{color:var(--danger)!important;}
-    .highlight-green{color:var(--success)!important;}
-    @media (max-width: 768px){
-      .hero{padding:22px;}
-      .big-plan .value{font-size:2.6rem;}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Executive Cards Dashboard 2569</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--primary:#0d6efd;--cyan:#12b6d9;--purple:#7a5af8;--navy:#14315a;--text:#334155;--success:#1fa971;--warning:#f59e0b;--danger:#e24b4b;}
+body{font-family:"Segoe UI",Tahoma,sans-serif;background:linear-gradient(180deg,#f7fbff,#edf4fb);color:var(--text);}
+.container-page{max-width:1480px;margin:auto;padding:28px 20px 50px;}
+.hero{background:#fff;border-radius:28px;padding:30px 34px;box-shadow:0 16px 40px rgba(26,61,111,.08);position:relative;overflow:hidden;}
+.hero:before{content:"";position:absolute;right:-70px;top:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(18,182,217,.20),rgba(122,90,248,.05) 68%,transparent 70%);border-radius:50%;}
+.hero h1{font-weight:850;color:var(--navy);font-size:clamp(1.8rem,2.7vw,3rem);margin:0;}
+.sub{font-size:1.05rem;color:#587397;margin-top:8px;} .badge-soft{display:inline-block;background:#edf4ff;color:#2457b3;font-weight:700;border-radius:999px;padding:.55rem .9rem;}
+.updated{font-size:.9rem;color:#5f789c;background:#f1f7ff;border-radius:999px;padding:.45rem .8rem;display:inline-block;}
+.section-title{font-weight:850;color:var(--navy);font-size:1.18rem;margin:26px 0 14px;}
+.card-soft,.kpi,.status-card,.mini-card,.facility-card{background:#fff;border:0;border-radius:22px;box-shadow:0 12px 32px rgba(26,61,111,.08);}
+.kpi{padding:22px;height:100%;position:relative;overflow:hidden;border-top:6px solid var(--primary);}
+.kpi .label{font-size:.96rem;color:#617696;font-weight:700;margin-bottom:8px;} .kpi .value{font-size:2.35rem;font-weight:850;line-height:1;color:var(--navy);} .kpi .unit{font-size:1rem;font-weight:800;color:#607696;} .kpi .note{font-size:.9rem;color:#64748b;margin-top:10px;line-height:1.5;}
+.big-plan{background:linear-gradient(135deg,#0d6efd 0%,#12b6d9 100%);color:#fff;border-top:none;} .big-plan .label,.big-plan .note,.big-plan .unit{color:rgba(255,255,255,.94);} .big-plan .value{color:#fff;font-size:3.35rem;}
+.pill{display:inline-block;border-radius:999px;padding:6px 12px;font-size:.86rem;font-weight:800;margin-top:10px;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.28);}
+.accent-primary{border-top:6px solid var(--primary)} .accent-cyan{border-top:6px solid var(--cyan)} .accent-purple{border-top:6px solid var(--purple)} .accent-green{border-top:6px solid var(--success)} .accent-amber{border-top:6px solid var(--warning)} .accent-red{border-top:6px solid var(--danger)}
+.summary-grid .mini-card{padding:18px;height:100%;} .summary-grid h3{margin:0;font-size:1.85rem;font-weight:850;color:var(--navy);}
+.cap{font-size:.92rem;color:#607696;font-weight:800;margin-top:5px;} .subline{font-size:.84rem;color:#7a8ca6;margin-top:8px;line-height:1.45;}
+.status-card{padding:18px;height:100%;} .status-title{font-size:1rem;font-weight:800;color:var(--navy);min-height:3rem;} .status-num{font-size:2rem;font-weight:850;color:var(--navy);} .status-pct{font-size:.93rem;color:#61748d;font-weight:800;} .status-pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.82rem;font-weight:800;background:#eff5ff;color:#295db4;margin-top:10px;}
+.highlight-red{color:var(--danger)!important;} .highlight-green{color:var(--success)!important;}
+.list-card{padding:20px 22px;height:100%;} .card-header-line{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px;} .card-header-line h2{font-size:1.1rem;font-weight:850;color:var(--navy);margin:0;} .card-header-line span{font-size:.85rem;color:#6780a3;}
+.formal-list li{margin-bottom:12px;line-height:1.55;} .formal-list strong{color:var(--navy);}
+.table-clean{width:100%;} .table-clean td{padding:10px 0;border-bottom:1px dashed #dbe5f2;font-size:.97rem;} .table-clean tr:last-child td{border-bottom:none;} .table-clean td:last-child{text-align:right;font-weight:850;color:var(--navy);}
+.facility-card{background:linear-gradient(180deg,#fff,#f8fbff);padding:18px;height:100%;} .facility-card .num{font-size:2rem;font-weight:850;color:var(--primary);line-height:1;} .facility-card .label{font-weight:800;color:var(--navy);margin-top:4px;} .facility-card .desc{font-size:.86rem;color:#70829f;margin-top:8px;}
+.footer-note{font-size:.84rem;color:#7387a6;margin-top:16px;}
+@media(max-width:768px){.hero{padding:22px}.big-plan .value{font-size:2.6rem}}
+</style>
 </head>
 <body>
-  <div class="container-page">
-    <section class="hero mb-4">
-      <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
-        <div>
-          <div class="badge-soft mb-3">Executive Summary Dashboard</div>
-          <h1>สรุปภาพรวมการเตรียมความพร้อมรองรับนักศึกษาใหม่ ปีการศึกษา 2569</h1>
-
-        </div>
-        <div class="text-md-end">
-          <div class="chip mb-2">ข้อมูล ณ วันที่ 16 มิถุนายน 2569</div><br>
-          <div class="chip">วิทยาเขตภูเก็ต</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="row g-4 mb-1">
-      <div class="col-lg-5">
-        <div class="card-soft kpi big-plan">
-          <div class="label">จำนวนที่ควรวางแผนรองรับด้านสิ่งอำนวยความสะดวกเบื้องต้น</div>
-          <div class="d-flex align-items-end gap-2 mt-2">
-            <div class="value">396</div>
-            <div class="unit mb-2">คน</div>
-          </div>
-          <div class="note">คำนวณจากผู้ที่ <strong>ชำระเงินแล้วบางส่วน/ครบ</strong> หรือ <strong>รายงานตัวแล้ว</strong><br>เพื่อใช้เป็นฐานในการวางแผนห้องเรียน อาหาร หอพัก และบริการพื้นฐาน</div>
-          <div class="pill">คิดเป็น 76.0% ของนักศึกษาใหม่ทั้งหมด</div>
-        </div>
-      </div>
-      <div class="col-lg-7">
-        <div class="row g-4 summary-grid">
-          <div class="col-md-4">
-            <div class="mini-card accent-primary">
-              <h3>521</h3>
-              <div class="cap">นักศึกษาใหม่ทั้งหมด</div>
-              <div class="subline">ฐานข้อมูลรวมสำหรับการวางแผน</div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mini-card accent-green">
-              <h3>43.3%</h3>
-              <div class="cap">อัตรารับชำระ</div>
-              <div class="subline">รับชำระแล้ว 11,803,492 บาท</div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mini-card accent-red">
-              <h3>125</h3>
-              <div class="cap">กลุ่มต้องติดตามเร่งด่วน</div>
-              <div class="subline">ยังไม่ชำระและยังไม่รายงานตัว</div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mini-card accent-cyan">
-              <h3>111</h3>
-              <div class="cap">รายงานตัวแล้ว</div>
-              <div class="subline">คิดเป็น 21.3% ของทั้งหมด</div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mini-card accent-purple">
-              <h3>410</h3>
-              <div class="cap">ยังไม่รายงานตัว</div>
-              <div class="subline">คิดเป็น 78.7% ของทั้งหมด</div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mini-card accent-amber">
-              <h3>15.449</h3>
-              <div class="cap">ยอดคงเหลือ (ลบ.)</div>
-              <div class="subline">จากยอดเรียกเก็บรวม 27,252,000 บาท</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">สรุปสถานะ 6 กลุ่มหลัก</div>
-    <div class="row g-4">
-      <div class="col-md-6 col-xl-4">
-        <div class="status-card accent-green">
-          <div class="status-title">ชำระครบแล้ว + รายงานตัวแล้ว</div>
-          <div class="status-num">36 <span class="unit">คน</span></div>
-          <div class="status-pct">6.9% ของทั้งหมด</div>
-          <div class="status-pill">กลุ่มพร้อมค่อนข้างชัดเจน</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="status-card accent-primary">
-          <div class="status-title">ชำระครบแล้ว + ยังไม่รายงานตัว</div>
-          <div class="status-num">66 <span class="unit">คน</span></div>
-          <div class="status-pct">12.7% ของทั้งหมด</div>
-          <div class="status-pill">ควรติดตามให้รายงานตัว</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="status-card accent-cyan">
-          <div class="status-title">ชำระบางส่วน + รายงานตัวแล้ว</div>
-          <div class="status-num">60 <span class="unit">คน</span></div>
-          <div class="status-pct">11.5% ของทั้งหมด</div>
-          <div class="status-pill">มีแนวโน้มเข้าร่วมสูง</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="status-card accent-amber">
-          <div class="status-title">ชำระบางส่วน + ยังไม่รายงานตัว</div>
-          <div class="status-num highlight-red">219 <span class="unit">คน</span></div>
-          <div class="status-pct">42.0% ของทั้งหมด</div>
-          <div class="status-pill">กลุ่มใหญ่ที่สุดที่ต้องติดตาม</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="status-card accent-purple">
-          <div class="status-title">ยังไม่ชำระ + รายงานตัวแล้ว</div>
-          <div class="status-num">15 <span class="unit">คน</span></div>
-          <div class="status-pct">2.9% ของทั้งหมด</div>
-          <div class="status-pill">ควรประสานด้านการเงิน</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="status-card accent-red">
-          <div class="status-title">ยังไม่ชำระ + ยังไม่รายงานตัว</div>
-          <div class="status-num highlight-red">125 <span class="unit">คน</span></div>
-          <div class="status-pct">24.0% ของทั้งหมด</div>
-          <div class="status-pill">กลุ่มเสี่ยงต่อความไม่แน่นอน</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-4 mt-1">
-      <div class="col-lg-6">
-        <div class="card-soft list-card h-100">
-          <div class="card-header-line">
-            <h2>สรุปสำหรับผู้บริหาร</h2>
-            <span>Executive Brief</span>
-          </div>
-          <ol class="formal-list ps-3 mb-0">
-            <li><strong>ฐานวางแผนหลักในการเตรียมสิ่งอำนวยความสะดวก</strong> ควรใช้จำนวน <strong>396 คน</strong> เป็นตัวเลขอ้างอิงเบื้องต้น เนื่องจากเป็นกลุ่มที่มีการชำระเงินแล้วบางส่วน/ครบ หรือรายงานตัวแล้ว</li>
-            <li><strong>อัตรารับชำระปัจจุบันอยู่ที่ 43.3%</strong> โดยรับชำระแล้ว <strong>11.803 ล้านบาท</strong> จากยอดเรียกเก็บรวม <strong>27.252 ล้านบาท</strong></li>
-            <li><strong>กลุ่มที่ต้องติดตามเร่งด่วนที่สุด</strong> คือ <strong>ชำระบางส่วนแต่ยังไม่รายงานตัว 219 คน</strong> และ <strong>ยังไม่ชำระและยังไม่รายงานตัว 125 คน</strong></li>
-            <li><strong>ข้อมูลนี้ควรใช้ร่วมกันทุกหน่วยงาน</strong> เพื่อเตรียมห้องเรียน พื้นที่กิจกรรม อาหาร หอพัก และบริการพื้นฐานให้สอดคล้องกับจำนวนนักศึกษาที่มีแนวโน้มเข้าพื้นที่จริง</li>
-          </ol>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="card-soft list-card h-100">
-          <div class="card-header-line">
-            <h2>ตัวเลขสำคัญสำหรับหน่วยงานที่เกี่ยวข้อง</h2>
-            <span>Key Reference</span>
-          </div>
-          <table class="table-clean">
-            <tr><td>ยอดเรียกเก็บรวม</td><td>27,252,000 บาท</td></tr>
-            <tr><td>ยอดรับชำระแล้ว</td><td>11,803,492 บาท</td></tr>
-            <tr><td>ยอดคงเหลือ</td><td>15,448,508 บาท</td></tr>
-            <tr><td>ชำระครบแล้ว</td><td>102 คน (19.6%)</td></tr>
-            <tr><td>ชำระบางส่วน</td><td>279 คน (53.6%)</td></tr>
-            <tr><td>ยังไม่ชำระ</td><td>140 คน (26.9%)</td></tr>
-            <tr><td>รายงานตัวแล้ว</td><td>111 คน (21.3%)</td></tr>
-            <tr><td>ยังไม่รายงานตัว</td><td>410 คน (78.7%)</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-note">หมายเหตุ: การคำนวณ “จำนวนที่ควรวางแผนรองรับเบื้องต้น” ใช้หลักเกณฑ์จากผู้ที่มีการชำระเงินแล้วอย่างน้อยบางส่วน หรือผู้ที่รายงานตัวแล้ว เพื่อสะท้อนจำนวนผู้มีแนวโน้มเข้าร่วมกิจกรรมและใช้บริการจริงในเบื้องต้น</div>
-  </div>
-</body>
-</html>
+<div class="container-page">
+<section class="hero mb-4"><div class="d-flex flex-wrap justify-content-between align-items-start gap-3"><div><div class="badge-soft mb-3">Executive Summary Cards</div><h1>สรุปข้อมูลการชำระเงินและการเตรียมสิ่งอำนวยความสะดวกนักศึกษาใหม่ ปีการศึกษา 2569</h1><div class="sub">สำหรับผู้บริหารและหน่วยงานที่เกี่ยวข้อง — สรุปตัวเลขสำคัญแบบการ์ด เปิดแล้วเข้าใจทันที</div></div><div class="text-md-end"><div class="updated">ข้อมูลล่าสุด: data-update(1).csv</div><br><div class="updated mt-2">วิทยาเขตภูเก็ต</div></div></div></section>
+<div class="row g-4"><div class="col-lg-5"><div class="kpi big-plan"><div class="label">จำนวนที่ควรวางแผนรองรับด้านสิ่งอำนวยความสะดวกเบื้องต้น</div><div class="d-flex align-items-end gap-2 mt-2"><div class="value">419</div><div class="unit mb-2">คน</div></div><div class="note">คำนวณจากผู้ที่ <b>ชำระเงินแล้วบางส่วน/ครบ</b> หรือ <b>รายงานตัวแล้ว</b> เพื่อใช้วางแผนห้องเรียน อาหาร หอพัก จุดบริการ และบุคลากรดูแลหน้างาน</div><div class="pill">คิดเป็น 76.2% ของนักศึกษาใหม่ทั้งหมด</div></div></div><div class="col-lg-7"><div class="row g-4 summary-grid">
+<div class="col-md-4"><div class="mini-card accent-primary"><h3>550</h3><div class="cap">นักศึกษาใหม่ทั้งหมด</div><div class="subline">ฐานข้อมูลรวม</div></div></div>
+<div class="col-md-4"><div class="mini-card accent-green"><h3>48.0%</h3><div class="cap">อัตรารับชำระ</div><div class="subline">รับชำระแล้ว 13.093 ล้านบาท</div></div></div>
+<div class="col-md-4"><div class="mini-card accent-red"><h3>102</h3><div class="cap">กลุ่มต้องติดตามเร่งด่วน</div><div class="subline">ยังไม่ชำระและยังไม่รายงานตัว</div></div></div>
+<div class="col-md-4"><div class="mini-card accent-cyan"><h3>130</h3><div class="cap">รายงานตัวแล้ว</div><div class="subline">คิดเป็น 23.6% ของทั้งหมด</div></div></div>
+<div class="col-md-4"><div class="mini-card accent-purple"><h3>420</h3><div class="cap">ยังไม่รายงานตัว</div><div class="subline">คิดเป็น 76.4% ของทั้งหมด</div></div></div>
+<div class="col-md-4"><div class="mini-card accent-amber"><h3>14.159</h3><div class="cap">ยอดคงเหลือ (ลบ.)</div><div class="subline">จากยอดเรียกเก็บ 27.252 ล้านบาท</div></div></div>
+</div></div></div>
+<div class="section-title">Facility Planning Cards: สิ่งอำนวยความสะดวกที่ควรเตรียมจากฐาน 419 คน + สำรอง 10%</div>
+<div class="row g-4"><div class="col-md-4 col-xl-2"><div class="facility-card"><div class="num">461</div><div class="label">จำนวนเผื่อแผน</div><div class="desc">ใช้เป็นจำนวนตั้งต้นรวมสำรอง 10%</div></div></div><div class="col-md-4 col-xl-2"><div class="facility-card"><div class="num">461</div><div class="label">อาหาร/เครื่องดื่ม</div><div class="desc">ชุดต่อมื้อสำหรับช่วงกิจกรรม</div></div></div><div class="col-md-4 col-xl-2"><div class="facility-card"><div class="num">461</div><div class="label">ที่นั่ง/พื้นที่เรียน</div><div class="desc">ที่นั่งรองรับในห้องเรียนหรือห้องประชุม</div></div></div><div class="col-md-4 col-xl-2"><div class="facility-card"><div class="num">12</div><div class="label">ห้องเรียน</div><div class="desc">ประมาณการห้องละ 40 คน</div></div></div><div class="col-md-4 col-xl-2"><div class="facility-card"><div class="num">6</div><div class="label">จุดบริการ</div><div class="desc">ประมาณการจุดละ 80 คน</div></div></div><div class="col-md-4 col-xl-2"><div class="facility-card"><div class="num">24</div><div class="label">บุคลากรหน้างาน</div><div class="desc">ประมาณการ 1 คนต่อ 20 คน</div></div></div></div>
+<div class="section-title">สรุปสถานะ 6 กลุ่มหลัก</div><div class="row g-4">
+<div class="col-md-6 col-xl-4"><div class="status-card accent-green"><div class="status-title">ชำระครบแล้ว + รายงานตัวแล้ว</div><div class="status-num ">44 <span class="unit">คน</span></div><div class="status-pct">8.0% ของทั้งหมด</div><div class="status-pill">กลุ่มพร้อมชัดเจน</div></div></div>
+<div class="col-md-6 col-xl-4"><div class="status-card accent-primary"><div class="status-title">ชำระครบแล้ว + ยังไม่รายงานตัว</div><div class="status-num ">112 <span class="unit">คน</span></div><div class="status-pct">20.4% ของทั้งหมด</div><div class="status-pill">ควรติดตามให้รายงานตัว</div></div></div>
+<div class="col-md-6 col-xl-4"><div class="status-card accent-cyan"><div class="status-title">ชำระบางส่วน + รายงานตัวแล้ว</div><div class="status-num ">71 <span class="unit">คน</span></div><div class="status-pct">12.9% ของทั้งหมด</div><div class="status-pill">มีแนวโน้มเข้าร่วมสูง</div></div></div>
+<div class="col-md-6 col-xl-4"><div class="status-card accent-amber"><div class="status-title">ชำระบางส่วน + ยังไม่รายงานตัว</div><div class="status-num highlight-red">206 <span class="unit">คน</span></div><div class="status-pct">37.5% ของทั้งหมด</div><div class="status-pill">กลุ่มใหญ่ที่สุดที่ต้องติดตาม</div></div></div>
+<div class="col-md-6 col-xl-4"><div class="status-card accent-purple"><div class="status-title">ยังไม่ชำระ + รายงานตัวแล้ว</div><div class="status-num ">15 <span class="unit">คน</span></div><div class="status-pct">2.7% ของทั้งหมด</div><div class="status-pill">ควรประสานด้านการเงิน</div></div></div>
+<div class="col-md-6 col-xl-4"><div class="status-card accent-red"><div class="status-title">ยังไม่ชำระ + ยังไม่รายงานตัว</div><div class="status-num highlight-red">102 <span class="unit">คน</span></div><div class="status-pct">18.5% ของทั้งหมด</div><div class="status-pill">กลุ่มเสี่ยงต่อความไม่แน่นอน</div></div></div>
+</div>
+<div class="row g-4 mt-1"><div class="col-lg-6"><div class="card-soft list-card"><div class="card-header-line"><h2>สรุปสำหรับผู้บริหาร</h2><span>Executive Brief</span></div><ol class="formal-list ps-3 mb-0"><li><strong>ฐานวางแผนสิ่งอำนวยความสะดวก</strong> ควรใช้จำนวน <strong>419 คน</strong> และเผื่อสำรองเป็น <strong>461 คน</strong> เพื่อรองรับความไม่แน่นอนของการเข้าพื้นที่จริง</li><li><strong>อัตรารับชำระล่าสุดอยู่ที่ 48.0%</strong> โดยรับชำระแล้ว <strong>13.093 ล้านบาท</strong> จากยอดเรียกเก็บรวม <strong>27.252 ล้านบาท</strong></li><li><strong>กลุ่มที่ต้องติดตามเร่งด่วน</strong> คือ ชำระบางส่วนแต่ยังไม่รายงานตัว <strong>206 คน</strong> และยังไม่ชำระ/ยังไม่รายงานตัว <strong>102 คน</strong></li><li><strong>หน่วยงานที่เกี่ยวข้อง</strong> ควรใช้ข้อมูลนี้ร่วมกันเพื่อจัดเตรียมห้องเรียน อาหาร หอพัก จุดบริการ และบุคลากรหน้างานให้สอดคล้องกับจำนวนที่มีแนวโน้มเข้าร่วมจริง</li></ol></div></div><div class="col-lg-6"><div class="card-soft list-card"><div class="card-header-line"><h2>ตัวเลขสำคัญด้านการเงินและรายงานตัว</h2><span>Key Reference</span></div><table class="table-clean"><tr><td>ยอดเรียกเก็บรวม</td><td>27.252 ล้านบาท</td></tr><tr><td>ยอดรับชำระแล้ว</td><td>13.093 ล้านบาท</td></tr><tr><td>ยอดคงเหลือ</td><td>14.159 ล้านบาท</td></tr><tr><td>ชำระครบแล้ว</td><td>156 คน (28.4%)</td></tr><tr><td>ชำระบางส่วน</td><td>277 คน (50.4%)</td></tr><tr><td>ยังไม่ชำระ</td><td>117 คน (21.3%)</td></tr><tr><td>รายงานตัวแล้ว</td><td>130 คน (23.6%)</td></tr><tr><td>ยังไม่รายงานตัว</td><td>420 คน (76.4%)</td></tr></table></div></div></div>
+<div class="section-title">สรุปตามคณะ/วิทยาลัย</div><div class="card-soft list-card"><div class="table-responsive"><table class="table table-sm align-middle mb-0"><thead><tr style="color:var(--navy);font-weight:800"><th>คณะ/วิทยาลัย</th><th class="text-end">ทั้งหมด</th><th class="text-end">รายงานตัวแล้ว</th><th class="text-end">อัตรารายงานตัว</th><th class="text-end">อัตรารับชำระ</th></tr></thead><tbody><tr><td>คณะการบริการและการท่องเที่ยว</td><td class="text-end">165</td><td class="text-end">42</td><td class="text-end">25.5%</td><td class="text-end">52.1%</td></tr><tr><td>คณะวิเทศศึกษา</td><td class="text-end">140</td><td class="text-end">25</td><td class="text-end">17.9%</td><td class="text-end">44.7%</td></tr><tr><td>คณะเทคโนโลยีและสิ่งแวดล้อม</td><td class="text-end">68</td><td class="text-end">19</td><td class="text-end">27.9%</td><td class="text-end">52.6%</td></tr><tr><td>วิทยาลัยการคอมพิวเตอร์</td><td class="text-end">177</td><td class="text-end">44</td><td class="text-end">24.9%</td><td class="text-end">44.6%</td></tr></tbody></table></div></div>
+<div class="footer-note">หมายเหตุ: ไฟล์นี้สร้างจากข้อมูลล่าสุด และใช้หลักเกณฑ์การจัดกลุ่มตามยอดคงเหลือ/ยอดชำระ รวมถึงรหัสรายงานตัว OK = รายงานตัวแล้ว, AY = ยังไม่รายงานตัว</div>
+</div></body></html>
